@@ -1,4 +1,6 @@
-
+html {
+    background: #F3F5FC;
+}
 
 
 
@@ -9,23 +11,38 @@
 
 .rodape {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
     align-content: center;
     justify-content: center;
-    max-width: 1440px;
-    padding: 10px 20px;
-    margin: 10px 20px;
-    font-size: 16px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 .rodape ul {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 .rodape ul li {
     font-weight: 700;
     display: inline;
     margin: 0 10px 0 10px;
+    padding: 5px 0;
+}
+.logo-rodape {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    box-shadow: 2px 2px 4px #757FB2;
+}
+.rodape ul li p {
+    color: #757FB2;
+    text-shadow: 2px 2px 4px #757FB2;
+    text-align: center;
 }
