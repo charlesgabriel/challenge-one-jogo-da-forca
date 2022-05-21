@@ -25,6 +25,11 @@ body {
     height: 48px;
 }
 
+#app {
+    display: flex;
+    flex: 1;
+}
+
 .div-botoes-iniciais {
     flex: 1;
     display: flex;
