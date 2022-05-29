@@ -4,4 +4,4 @@ function renderizarTela() {
   $app.innerHTML = chamarTela();
 }
 
-renderizarTela();
+// renderizarTela();

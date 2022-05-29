@@ -1,4 +1,16 @@
 const palavras = [
-    'HTML',
-    'CSS'
+    ['ABELHA', 'ANIMAL'],
+    ['ANDORINHA', 'ANIMAL'],
+    ['BABUINO', 'ANIMAL'],
+    ['BALEIA', 'ANIMAL'],
+    ['CACHORRO', 'ANIMAL'],
+    ['CAMALEAO', 'ANIMAL'],
+    ['DRAGAO DE COMODO', 'ANIMAL'],
+    ['DROMEDARIO', 'ANIMAL'],
+    ['EMA', 'ANIMAL'],
+    ['ELEFANTE', 'ANIMAL'],
+    ['FOCA', 'ANIMAL'],
+    ['FLAMINGO', 'ANIMAL'],
+    ['GOLFINHO', 'ANIMAL'],
+    ['GUAXINIM', 'ANIMAL'],
 ];

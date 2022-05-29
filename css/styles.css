@@ -1,104 +1,143 @@
 body {
-    background: #F3F5FC;
-    font-size: 16px;
+  background: #F3F5FC;
+  font-size: 16px;
 }
 
 .conteudo {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    max-width: 1440px;
-    margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .principal {
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .div-logo {
-    padding: 24px 16px;
+  padding: 24px 16px;
 }
 
 .logo-cabecalho {
-    width: 32px;
-    height: 48px;
+  width: 32px;
+  height: 48px;
 }
 
 #app {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }
 
 .div-botoes-iniciais {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .botao {
-    border-radius: 24px;
-    border: 1px solid #0A3871;
-    padding: 24px;
+  border-radius: 24px;
+  border: 1px solid #0A3871;
+  padding: 24px;
 }
 
-.botao-jogar {
-    color: #FFFFFF;
-    background: #0A3871;
+.espacamento {
+  margin-bottom: 24px;
 }
 
-.texto-botao-comecar{
-    margin: 24px 72px;
+.botao-preenchido {
+  color: #FFFFFF;
+  background: #0A3871;
 }
 
-.botao-adicionar {
-    color: #0A3871;
+.texto-botao-comecar {
+  margin: 24px 72px;
+}
+
+.botao-vazado {
+  color: #0A3871;
 }
 
 .texto-botao-adicionar {
-    margin: 0 54px;
+  margin: 0 54px;
+}
+
+.div-jogo {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.div-jogo-forca {
+  flex: 1 0 auto;
+  margin: 40px;
+  height: 350px;
+}
+
+.div-jogo-letras {
+  flex: 1 0 auto;
+  margin: 0 35px;
+  height: 115px;
+}
+
+.div-botoes {
+  flex: 1 0 auto;
+  margin: 56px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 
 
 .rodape {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: 10px auto;
 }
 
 .rodape ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .rodape ul li {
-    font-weight: 700;
-    display: inline;
-    margin: 0 10px 0 10px;
-    padding: 5px 0;
+  font-weight: 700;
+  display: inline;
+  margin: 0 10px 0 10px;
+  padding: 5px 0;
 }
 
 .logo-rodape {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    box-shadow: 2px 2px 4px #757FB2;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  box-shadow: 2px 2px 4px #757FB2;
 }
 
 .rodape ul li p {
-    color: #757FB2;
-    text-shadow: 2px 2px 4px #757FB2;
-    text-align: center;
+  color: #757FB2;
+  text-shadow: 2px 2px 4px #757FB2;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .div-botoes {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+
 }
