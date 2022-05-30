@@ -1,44 +1,74 @@
-const ul = $class('jogo-erros');
+const ulAcertos = $class('jogo-acertos');
+const ulErros = $class('jogo-erros');
 let palavra = [];
+let erros = [];
 let letras = [];
 let teclas = [];
+let dica = "";
 
 document.body.addEventListener('keypress', function(event) {
-    const tecla = event.key;
-    teclas.push(tecla);
-    limparCampos();
-    compararLetras(tecla);
+    const regex = /[A-Z]/;
+    const arrayTecla = regex.exec(event.key);
+    if(arrayTecla !== null) {
+        const tecla = arrayTecla[0];
+        if(teclas.length > 0) {
+            for(let i = 0; i < teclas.length; i++) {
+                if(!teclas.includes(tecla)) {
+                    teclas.push(tecla);
+                }
+            }
+        } else {
+            teclas.push(tecla);
+        }
+        confirmarTecla(tecla);
+        console.log("erros", erros);
+        limparPalavra();
+        montarLi();
+    }
 });
 
+function confirmarTecla(tecla) {
+    if(
+        !palavra.includes(tecla)  &&
+        !erros.includes(tecla)
+    ) {
+        erros.push(tecla);
+    }
+}
+
+function limparPalavra() {
+    ulAcertos[0].innerHTML = "";
+}
+
 function limparCampos() {
-    ul[0].textContent = "";
+    palavra = [];
+    letras = [];
+    teclas = [];
 }
 
 function novoJogo() {
-    const erros = [];
+    limparCampos();
+    limparPalavra();
     
-    palavra = palavras[Math.floor(Math.random() * palavras.length)];
+    const palavraDica = palavras[Math.floor(Math.random() * palavras.length)];
 
+    palavra = palavraDica[0];
+    dica = palavraDica[1];
+    
     console.log(palavra);
-    montarPalavra(palavra[0]);
-
-    montarLi(letras);
-}
-
-function compararLetras(tecla) {
-    if(palavra[0].includes(tecla)) {
-        montarLi(letras);
-    }
+    montarPalavra(palavra);
+    
+    montarLi();
 }
 
 function montarPalavra(palavra) {
     letras = palavra.split('');
 }
 
-function montarLi(letras) {
+function montarLi() {
     letras.forEach(function(letra) {
         var li = create('li');
-        li.classList.add("jogo-letras");
+        li.classList.add('jogo-letras');
         if(teclas.length > 0) {
             teclas.forEach(function(tecla) {
                 if(tecla == letra) {
@@ -48,7 +78,13 @@ function montarLi(letras) {
         } else {
             li.textContent = "";
         }
-        ul[0].appendChild(li);
+        ulAcertos[0].appendChild(li);
+    });
+    erros.forEach(function(erro) {
+        var li = create('li');
+        li.classList.add('jogo-erros');
+        li.textContext = "erro";
+        ulErros[0].appendChild(li);
     });
 }
 

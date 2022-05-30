@@ -3,6 +3,10 @@
 Acesso: [https://charlesgabriel.github.io/challenge-one-jogo-da-forca/](https://charlesgabriel.github.io/challenge-one-jogo-da-forca/)
 
 
+Requisitos:
+- Deve funcionar só com letras maiúscula.
+- Não devem ser utilizadas letras com acentos nem caracteres especiais.
+
 
 [LinkedIN - IN logo used for professional networking,](https://icons8.com/icon/rRfZ3B26lWXV/linkedin---in-logo-used-for-professional-networking,) icon by [Icons8](https://icons8.com)
 
