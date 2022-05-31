@@ -1,6 +1,7 @@
 const ulAcertos = $class('jogo-acertos');
 const ulErros = $class('jogo-erros');
 let palavra = [];
+let acertos = [];
 let erros = [];
 let letras = [];
 let teclas = [];
@@ -21,7 +22,6 @@ document.body.addEventListener('keypress', function(event) {
             teclas.push(tecla);
         }
         confirmarTecla(tecla);
-        console.log("erros", erros);
         limparPalavra();
         montarLi();
     }
@@ -44,6 +44,9 @@ function limparCampos() {
     palavra = [];
     letras = [];
     teclas = [];
+    acertos = [];
+    erros = [];
+    dica = "";
 }
 
 function novoJogo() {
@@ -51,7 +54,7 @@ function novoJogo() {
     limparPalavra();
     
     const palavraDica = palavras[Math.floor(Math.random() * palavras.length)];
-
+    
     palavra = palavraDica[0];
     dica = palavraDica[1];
     
@@ -63,6 +66,20 @@ function novoJogo() {
 
 function montarPalavra(palavra) {
     letras = palavra.split('');
+}
+
+function verificarPalavra() {
+    acertos = [];
+    const li = $class('jogo-letras');
+    for(let i = 0; i < li.length; i++) {
+        if(li[i].innerText !== "") {
+            acertos.push(li[i].innerText);
+        }
+    }
+    if(acertos.length === palavra.length) {
+        return true;
+    }
+    return false
 }
 
 function montarLi() {
@@ -80,12 +97,19 @@ function montarLi() {
         }
         ulAcertos[0].appendChild(li);
     });
+    
     erros.forEach(function(erro) {
         var li = create('li');
         li.classList.add('jogo-erros');
         li.textContext = "erro";
         ulErros[0].appendChild(li);
     });
+
+    const verificar = verificarPalavra();
+    
+    if(verificar) {
+        alert("Você Venceu. Parabéns!");
+    }
 }
 
 novoJogo();
