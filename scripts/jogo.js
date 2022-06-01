@@ -34,6 +34,9 @@ function confirmarTecla(tecla) {
     ) {
         erros.push(tecla);
     }
+    if(erros.length > 4) {
+        alert("Fim de jogo");
+    }
 }
 
 function limparPalavra() {
@@ -98,10 +101,11 @@ function montarLi() {
         ulAcertos[0].appendChild(li);
     });
     
+    ulErros[0].innerHTML = "";
     erros.forEach(function(erro) {
         var li = create('li');
-        li.classList.add('jogo-erros');
-        li.textContext = "erro";
+        li.classList.add('jogo-letras-erros');
+        li.textContent = erro;
         ulErros[0].appendChild(li);
     });
 

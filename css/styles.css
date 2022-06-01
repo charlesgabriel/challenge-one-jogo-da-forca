@@ -119,6 +119,11 @@ body {
   border-bottom: 4px solid #0A3871;
 }
 
+.jogo-letras-erros {
+  color: #495057;
+  margin: 4px;
+}
+
 .div-botoes {
   flex: 1 0 auto;
   margin: 56px 16px 16px 16px;
