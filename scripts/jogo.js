@@ -7,11 +7,28 @@ let letras = [];
 let teclas = [];
 let dica = "";
 
+function limparPalavra() {
+    ulAcertos[0].innerHTML = "";
+}
+
+function limparCampos() {
+    palavra = [];
+    letras = [];
+    teclas = [];
+    acertos = [];
+    erros = [];
+    dica = "";
+}
+
+function montarPalavra(palavra) {
+    letras = palavra.split('');
+}
+
 document.body.addEventListener('keypress', function(event) {
-    const regex = /[A-Z]/;
-    const arrayTecla = regex.exec(event.key);
+    let regex = /[A-Z]/;
+    let arrayTecla = regex.exec(event.key);
     if(arrayTecla !== null) {
-        const tecla = arrayTecla[0];
+        let tecla = arrayTecla[0];
         if(teclas.length > 0) {
             for(let i = 0; i < teclas.length; i++) {
                 if(!teclas.includes(tecla)) {
@@ -33,47 +50,17 @@ function confirmarTecla(tecla) {
         !erros.includes(tecla)
     ) {
         erros.push(tecla);
+        montarDesenhoForca();
     }
     if(erros.length > 4) {
         alert("Fim de jogo");
     }
 }
 
-function limparPalavra() {
-    ulAcertos[0].innerHTML = "";
-}
-
-function limparCampos() {
-    palavra = [];
-    letras = [];
-    teclas = [];
-    acertos = [];
-    erros = [];
-    dica = "";
-}
-
-function novoJogo() {
-    limparCampos();
-    limparPalavra();
-    
-    const palavraDica = palavras[Math.floor(Math.random() * palavras.length)];
-    
-    palavra = palavraDica[0];
-    dica = palavraDica[1];
-    
-    console.log(palavra);
-    montarPalavra(palavra);
-    
-    montarLi();
-}
-
-function montarPalavra(palavra) {
-    letras = palavra.split('');
-}
 
 function verificarPalavra() {
     acertos = [];
-    const li = $class('jogo-letras');
+    let li = $class('jogo-letras');
     for(let i = 0; i < li.length; i++) {
         if(li[i].innerText !== "") {
             acertos.push(li[i].innerText);
@@ -109,11 +96,34 @@ function montarLi() {
         ulErros[0].appendChild(li);
     });
 
-    const verificar = verificarPalavra();
+    let verificar = verificarPalavra();
     
     if(verificar) {
         alert("Você Venceu. Parabéns!");
     }
+}
+
+montarDesenhoForca() {
+    if(erros.length > 0) {
+        var imgBase = create('img');
+        var img = "./images/forca-fundacao.svg";
+        
+    }
+}
+
+function novoJogo() {
+    limparCampos();
+    limparPalavra();
+    
+    let palavraDica = palavras[Math.floor(Math.random() * palavras.length)];
+    
+    palavra = palavraDica[0];
+    dica = palavraDica[1];
+    
+    console.log(palavra);
+    montarPalavra(palavra);
+    
+    montarLi();
 }
 
 novoJogo();
