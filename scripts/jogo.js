@@ -1,3 +1,4 @@
+const jogoForca = $class('div-jogo-forca');
 const ulAcertos = $class('jogo-acertos');
 const ulErros = $class('jogo-erros');
 let palavra = [];
@@ -103,11 +104,12 @@ function montarLi() {
     }
 }
 
-montarDesenhoForca() {
+function montarDesenhoForca() {
     if(erros.length > 0) {
-        var imgBase = create('img');
-        var img = "./images/forca-fundacao.svg";
-        
+        var imagemFundacao = new Image(100, 100);
+        imagemFundacao.src = "./images/forca-fundacao.svg";
+        // var img = "./images/forca-fundacao.svg";
+        jogoForca[0].appendChild(imagemFundacao);
     }
 }
 

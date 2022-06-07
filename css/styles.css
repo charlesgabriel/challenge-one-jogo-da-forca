@@ -82,6 +82,14 @@ body {
   flex: 1 0 auto;
   margin: 40px;
   height: 350px;
+  fill: transparent;
+  stroke: #ffffff;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.desenho-forca {
+  display: none;
 }
 
 .div-jogo-letras {
