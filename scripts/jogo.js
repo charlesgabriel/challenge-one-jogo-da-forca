@@ -1,12 +1,25 @@
 const jogoForca = $class('div-jogo-forca');
 const ulAcertos = $class('jogo-acertos');
 const ulErros = $class('jogo-erros');
+const imagemJogoForca = $class('div-jogo-forca');
 let palavra = [];
 let acertos = [];
 let erros = [];
 let letras = [];
 let teclas = [];
 let dica = "";
+const imgErros = [
+    "./images/jogo-forca-erro-01.svg",
+    "./images/jogo-forca-erro-02.svg",
+    "./images/jogo-forca-erro-03.svg",
+    "./images/jogo-forca-erro-04.svg",
+    "./images/jogo-forca-erro-05.svg",
+    "./images/jogo-forca-erro-06.svg",
+    "./images/jogo-forca-erro-07.svg",
+    "./images/jogo-forca-erro-08.svg",
+    "./images/jogo-forca-erro-09.svg",
+    "./images/jogo-forca-erro-10.svg",
+];
 
 function limparPalavra() {
     ulAcertos[0].innerHTML = "";
@@ -45,6 +58,14 @@ document.body.addEventListener('keypress', function(event) {
     }
 });
 
+function alertaVitoria() {
+    alert("Você Venceu. Parabéns!");
+}
+
+function alertaErro() {
+    alert("Fim de jogo");
+}
+
 function confirmarTecla(tecla) {
     if(
         !palavra.includes(tecla)  &&
@@ -53,11 +74,10 @@ function confirmarTecla(tecla) {
         erros.push(tecla);
         montarDesenhoForca();
     }
-    if(erros.length > 4) {
-        alert("Fim de jogo");
+    if(erros.length > 9) {
+        setTimeout(alertaErro, 1000);
     }
 }
-
 
 function verificarPalavra() {
     acertos = [];
@@ -100,16 +120,22 @@ function montarLi() {
     let verificar = verificarPalavra();
     
     if(verificar) {
-        alert("Você Venceu. Parabéns!");
+        setTimeout(alertaVitoria, 1000);
     }
 }
 
 function montarDesenhoForca() {
     if(erros.length > 0) {
-        var imagemFundacao = new Image(100, 100);
-        imagemFundacao.src = "./images/forca-fundacao.svg";
-        // var img = "./images/forca-fundacao.svg";
-        jogoForca[0].appendChild(imagemFundacao);
+        imagemJogoForca[0].innerHTML = "";
+        let imagemErro = create('img');
+        imagemErro.classList.add('desenho-forca');
+        imagemErro.setAttribute('alt', 'Jogo da forca');
+        for(let i = 0; i < erros.length; i++) {
+            if(erros.length == (i + 1)) {
+                imagemErro.setAttribute('src', imgErros[i]);
+            }
+        }
+        imagemJogoForca[0].appendChild(imagemErro);
     }
 }
 

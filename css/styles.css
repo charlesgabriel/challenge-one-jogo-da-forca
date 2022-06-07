@@ -79,17 +79,16 @@ body {
 }
 
 .div-jogo-forca {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   flex: 1 0 auto;
   margin: 40px;
   height: 350px;
-  fill: transparent;
-  stroke: #ffffff;
-  stroke-width: 4px;
-  stroke-linecap: round;
 }
 
 .desenho-forca {
-  display: none;
+  
 }
 
 .div-jogo-letras {
@@ -114,8 +113,9 @@ body {
   height: 36px;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: center;
   align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .jogo-letras {
