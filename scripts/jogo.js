@@ -59,11 +59,11 @@ document.body.addEventListener('keypress', function(event) {
 });
 
 function alertaVitoria() {
-    alert("Você Venceu. Parabéns!");
+    alert("Você Venceu. Parabéns!\nA palavra é " + palavra + ".");
 }
 
 function alertaErro() {
-    alert("Fim de jogo");
+    alert("Fim de jogo!\nA palavra é " + palavra + ".");
 }
 
 function confirmarTecla(tecla) {
@@ -75,7 +75,7 @@ function confirmarTecla(tecla) {
         montarDesenhoForca();
     }
     if(erros.length > 9) {
-        setTimeout(alertaErro, 1000);
+        setTimeout(alertaErro, 500);
     }
 }
 
@@ -120,7 +120,7 @@ function montarLi() {
     let verificar = verificarPalavra();
     
     if(verificar) {
-        setTimeout(alertaVitoria, 1000);
+        setTimeout(alertaVitoria, 500);
     }
 }
 
