@@ -1,42 +1,7 @@
 const telas = [
-  `
-    <div class="div-botoes-iniciais">
-      <button class="botao botao-preenchido" onclick="iniciarJogo()">
-        <p class="texto-botao-comecar">
-          Começar a jogar
-        </p>
-      </button>
-      <button class="botao botao-vazado" onclick="adicionarPalavra()">
-        <p class="texto-botao-adicionar">
-          Adicionar nova palavra
-        </p>
-      </button>
-    </div>
-  `,
-  `
-  <div class="div-jogo">
-    <div class="div-jogo-forca">
-
-    </div>
-    <div class="div-jogo-letras">
-
-    </div>
-    <div class="div-botoes">
-      <button class="botao espacamento">
-        Novo jogo
-      </button>
-      <button class="botao" onclick="voltarTela()">
-        Desistir
-      </button>
-
-    </div>
-  </div>
-  `,
-  `
-    hello word
-    <button class="botao" onclick="voltarTela()">Voltar</button>
-
-  `
+  telaInicial,
+  telaJogo,
+  telaPalavra
 ];
 
 const estado = {
