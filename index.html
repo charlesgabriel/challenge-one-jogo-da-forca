@@ -6,62 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Challenge ONE - Oracle Next Education - Jogo da Forca</title>
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/conteudo.css">
+  <link rel="stylesheet" href="./css/cabecalho.css">
 </head>
-<body class="conteudo">
-  <main class="principal">
-    <div class="div-logo">
-      <img class="logo-cabecalho" src="./images/logo-alura.svg" alt="Logo da Alura">
+<body>
+  <div class="conteudo">
+    <div class="cabecalho">
+      <img class="cabecalho__logo" src="./images/logo-alura.svg" alt="Logo da Alura">
     </div>
-
-    <!-- <div id="app"></div> -->
-    <div class="div-jogo">
-      <div class="div-jogo-forca">
-
-      </div>
-      <div class="div-jogo-letras">
-        <ul class="jogo-acertos"></ul>
-        <ul class="jogo-erros"></ul>
-      </div>
-      <div class="div-botoes">
-        <button class="botao botao-preenchido espacamento" onclick="novoJogo()">
-          Novo jogo
-        </button>
-        <button class="botao botao-vazado" onclick="voltarTela()">
-          Desistir
-        </button>
-
-      </div>
-    </div>
-
-  </main>
-
-  <footer class="rodape">
-    <ul>
-      <li>
-        <a href="https://www.linkedin.com/in/charles-gabriel-leandro-do-carmo-617b0078/">
-          <img class="logo-rodape" src="./images/icons8-linkedin.png" alt="Ícone do LinkedIn">
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/charlesgabriel/">
-          <img class="logo-rodape" src="./images/icons8-github.png" alt="Ícone do GitHub">
-        </a>
-      </li>
-      <li>
-        <p>
-          Charles Gabriel L Carmo - 2022 &copy;
-        </p>
-      </li>
-    </ul>
-  </footer>
-  <script src="./scripts/global.js"></script>
-  <script src="./scripts/palavras.js"></script>
-  <script src="./scripts/jogo.js"></script>
-  <script src="./scripts/telainicial.js"></script>
-  <script src="./scripts/telajogo.js"></script>
-  <script src="./scripts/telapalavra.js"></script>
-  <script src="./scripts/telas.js"></script>
-  <script src="./scripts/index.js"></script>
+    <main class="principal">
+      <div id="app"></div>
+    </main>
+  
+    <footer class="rodape">
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/charles-gabriel-leandro-do-carmo-617b0078/">
+            <img class="logo-rodape" src="./images/icons8-linkedin.png" alt="Ícone do LinkedIn">
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/charlesgabriel/">
+            <img class="logo-rodape" src="./images/icons8-github.png" alt="Ícone do GitHub">
+          </a>
+        </li>
+        <li>
+          <p>
+            Charles Gabriel L Carmo - 2022 &copy;
+          </p>
+        </li>
+      </ul>
+    </footer>
+  </div>
+  <script src="./scripts/index.js" type="module"></script>
 </body>
 </html>
